@@ -12,7 +12,16 @@ def set_difficulty(value, difficulty):
 
 def start_the_game():
     # lancement du jeu
-    pass
+    image = pygame.image.load("map/niveau_1.png")
+    screen = pygame.transform.scale(image, (1280, 700))
+    screen = pygame.display.set_mode((1280, 700), pygame.FULLSCREEN)
+    screen.blit(image, (0, 0))
+    pygame.display.update()
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+    
 image_menu = pygame_menu.baseimage.BaseImage(
     image_path=("image/fond_menu.jpg")
 )
